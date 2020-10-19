@@ -23,7 +23,7 @@ public class WebInitializer implements WebApplicationInitializer {
     private void registerDispatcherServlet(ServletContext servletContext) {
         AnnotationConfigWebApplicationContext webContext = new AnnotationConfigWebApplicationContext();
         webContext.setConfigLocation("gradle_spring_mvc_concept_study.config");
-
+       
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet("DispatcherServlet", new DispatcherServlet(webContext));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");

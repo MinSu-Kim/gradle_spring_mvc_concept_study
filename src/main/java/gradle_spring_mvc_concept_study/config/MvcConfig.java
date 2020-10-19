@@ -1,5 +1,6 @@
 package gradle_spring_mvc_concept_study.config;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -8,6 +9,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc  // 스프링 MVC설정 활성화
+@ComponentScan(basePackages = {
+        "gradle_spring_mvc_concept_study.controller",
+        "gradle_spring_mvc_concept_study.exception"
+})
 public class MvcConfig implements WebMvcConfigurer {
 
     /** DispatcherServlet의 매핑경로를 '/'주었을 때, JSP/HTML/CSS 등을 올바르게 처리하기 위한 설정 추가 */
